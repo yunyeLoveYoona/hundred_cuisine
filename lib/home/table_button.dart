@@ -3,16 +3,15 @@ import 'package:hundred_cuisine/home/table_button_model.dart';
 
 class TableButton extends StatefulWidget {
   final TableButtonModel _tableButtonModel;
-  final selectItem = 0;
-  TableButton(this._tableButtonModel);
 
+
+  TableButton(this._tableButtonModel)
 
   @override
   createState() => new TableButtonState(_tableButtonModel);
-
 }
 
-class TableButtonState extends State<TableButton>{
+class TableButtonState extends State<TableButton> {
   bool _select = false;
   final TableButtonModel _tableButtonModel;
 
@@ -48,9 +47,6 @@ class TableButtonState extends State<TableButton>{
           ],
         ),
         onTap: () {
-          setState(() {
-            _select =!_select;
-          });
 
         },
       ),
