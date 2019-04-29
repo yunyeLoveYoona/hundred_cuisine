@@ -15,21 +15,15 @@ class ButtonTableBar extends StatefulWidget {
 }
 
 class TableBarState extends State<ButtonTableBar> {
-  TableButton left, middle, right;
-  List<TableButtonModel> _tableButtonModels;
+  final List<TableButtonModel> _tableButtonModels;
+  int _selectPosition = 1 ;
 
   TableBarState(this._tableButtonModels);
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
 
-    left = TableButton(_tableButtonModels[0], () {
-    });
-
-    middle = TableButton(_tableButtonModels[1], () {});
-    right = TableButton(_tableButtonModels[2],(){
+  void _onItemClick(int position){
+    setState(() {
+      _selectPosition = position;
     });
   }
 
@@ -38,8 +32,11 @@ class TableBarState extends State<ButtonTableBar> {
     // TODO: implement build
     return new Container(
       child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[left, middle, right],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          TableButton(_tableButtonModels[0], _onItemClick,1,_selectPosition==1),
+        TableButton(_tableButtonModels[1],_onItemClick,2,_selectPosition==2),
+        TableButton(_tableButtonModels[2],_onItemClick,3,_selectPosition==3)],
       ),
     );
   }
