@@ -25,10 +25,12 @@ class TableBarState extends State<ButtonTableBar> {
     // TODO: implement initState
     super.initState();
 
-    left = TableButton(_tableButtonModels[0]);
+    left = TableButton(_tableButtonModels[0], () {
+    });
 
-    middle = TableButton(_tableButtonModels[1]);
-    right = TableButton(_tableButtonModels[2]);
+    middle = TableButton(_tableButtonModels[1], () {});
+    right = TableButton(_tableButtonModels[2],(){
+    });
   }
 
   @override

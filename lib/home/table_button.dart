@@ -3,20 +3,21 @@ import 'package:hundred_cuisine/home/table_button_model.dart';
 
 class TableButton extends StatefulWidget {
   final TableButtonModel _tableButtonModel;
+  final GestureTapCallback gestureTapCallback;
 
 
-  TableButton(this._tableButtonModel)
+  TableButton(this._tableButtonModel,this.gestureTapCallback);
 
   @override
-  createState() => new TableButtonState(_tableButtonModel);
+  createState() => new TableButtonState(_tableButtonModel,gestureTapCallback);
 }
 
 class TableButtonState extends State<TableButton> {
   bool _select = false;
   final TableButtonModel _tableButtonModel;
+  final GestureTapCallback gestureTapCallback;
 
-
-  TableButtonState(this._tableButtonModel);
+  TableButtonState(this._tableButtonModel,this.gestureTapCallback);
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +47,7 @@ class TableButtonState extends State<TableButton> {
             ),
           ],
         ),
-        onTap: () {
-
-        },
+        onTap:gestureTapCallback,
       ),
     );
   }
