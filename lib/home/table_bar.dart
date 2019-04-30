@@ -3,7 +3,7 @@ import 'package:hundred_cuisine/home/table_button.dart';
 import 'package:hundred_cuisine/home/table_button_model.dart';
 
 class ButtonTableBar extends StatefulWidget {
-  List<TableButtonModel> _tableButtonModels;
+  final List<TableButtonModel> _tableButtonModels;
 
   ButtonTableBar(this._tableButtonModels);
 

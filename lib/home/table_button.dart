@@ -5,7 +5,7 @@ import 'package:hundred_cuisine/home/table_button_model.dart';
 class TableButton extends StatefulWidget {
   final TableButtonModel _tableButtonModel;
   final ValueChanged<int> _onClick;
-  bool _isSelect;
+  final bool _isSelect;
   final int _position;
 
   TableButton(this._tableButtonModel,this._onClick,this._position,this._isSelect);
