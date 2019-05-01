@@ -25,7 +25,7 @@ class HomePageState extends State<HomePage>
         TableButtonModel("分类", Icons.apps, Colors.black45, Colors.redAccent));
     _tableButtonModels.add(TableButtonModel(
         "收藏", Icons.favorite_border, Colors.black45, Colors.redAccent));
-    _tableButton = ButtonTableBar(_tableButtonModels);
+    _tableButton = ButtonTableBar(_tableButtonModels,_pageChange);
   }
 
   @override
@@ -35,16 +35,31 @@ class HomePageState extends State<HomePage>
     super.dispose();
   }
 
+  void _pageChange(int position) {
+    _tabController.animateTo(position);
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       body: new Container(
         color: Colors.white,
-        padding: EdgeInsets.all(10),
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[_tableButton],
+          children: <Widget>[
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: _tableButtonModels.map((tableButtonModel) {
+                  return Center(
+                    child: Text(tableButtonModel.title),
+                  );
+                }).toList(),
+              ),
+            ),
+            _tableButton
+          ],
         ),
       ),
     );

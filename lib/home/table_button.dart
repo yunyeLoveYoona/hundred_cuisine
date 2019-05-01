@@ -20,7 +20,7 @@ class TableButtonState extends State<TableButton> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      padding: EdgeInsets.only(left: 20,top: 0,right: 20,bottom: 0),
+      padding: EdgeInsets.only(left: 20,top: 10,right: 20,bottom: 5),
       child: new GestureDetector(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
