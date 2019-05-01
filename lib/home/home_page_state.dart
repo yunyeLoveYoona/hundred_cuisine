@@ -38,8 +38,7 @@ class HomePageState extends State<HomePage>
   }
 
   void _pageChange(int position) {
-    _pageController.animateToPage(position,
-        duration: Duration(milliseconds: 500), curve: Curves.ease);
+    _pageController.jumpToPage(position);
   }
 
   @override

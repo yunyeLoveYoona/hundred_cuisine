@@ -6,6 +6,7 @@ class ButtonTableBar extends StatefulWidget {
   final List<TableButtonModel> _tableButtonModels;
   final ValueChanged<int> _pageChange;
   ValueChanged<int> changePage;
+  int _selectPosition = 1 ;
   ButtonTableBar(this._tableButtonModels,this._pageChange);
 
   @override
@@ -17,30 +18,40 @@ class ButtonTableBar extends StatefulWidget {
 
 class TableBarState extends State<ButtonTableBar> {
   final List<TableButtonModel> _tableButtonModels;
-  int _selectPosition = 1 ;
+
 
   TableBarState(this._tableButtonModels);
 
 
   void _onItemClick(int position){
-    widget._pageChange(position);
-    setState(() {
-      _selectPosition = position;
-    });
+    if(position!=widget._selectPosition){
+      widget._pageChange(position);
+      setState(() {
+        widget._selectPosition = position;
+      });
+    }
+  }
+
+  void _changeSelectItem(int position){
+    if(position!=widget._selectPosition){
+      setState(() {
+        widget._selectPosition = position;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    widget.changePage = _onItemClick;
+    widget.changePage = _changeSelectItem;
     return new Container(
       alignment: Alignment.bottomCenter,
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          TableButton(_tableButtonModels[0], _onItemClick,1,_selectPosition==1),
-        TableButton(_tableButtonModels[1],_onItemClick,2,_selectPosition==2),
-        TableButton(_tableButtonModels[2],_onItemClick,3,_selectPosition==3)],
+          TableButton(_tableButtonModels[0], _onItemClick,0,widget._selectPosition==0),
+        TableButton(_tableButtonModels[1],_onItemClick,1,widget._selectPosition==1),
+        TableButton(_tableButtonModels[2],_onItemClick,2,widget._selectPosition==2)],
       ),
     );
   }
