@@ -17,7 +17,7 @@ class ButtonTableBar extends StatefulWidget {
 
 class TableBarState extends State<ButtonTableBar> {
   final List<TableButtonModel> _tableButtonModels;
-  int _selectPosition = 0 ;
+  int _selectPosition = 1 ;
 
   TableBarState(this._tableButtonModels);
 
@@ -38,9 +38,9 @@ class TableBarState extends State<ButtonTableBar> {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          TableButton(_tableButtonModels[0], _onItemClick,0,_selectPosition==0),
-        TableButton(_tableButtonModels[1],_onItemClick,1,_selectPosition==1),
-        TableButton(_tableButtonModels[2],_onItemClick,2,_selectPosition==2)],
+          TableButton(_tableButtonModels[0], _onItemClick,1,_selectPosition==1),
+        TableButton(_tableButtonModels[1],_onItemClick,2,_selectPosition==2),
+        TableButton(_tableButtonModels[2],_onItemClick,3,_selectPosition==3)],
       ),
     );
   }

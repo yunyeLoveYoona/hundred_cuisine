@@ -6,6 +6,6 @@ class HomeCoolingState extends State<HomeCooling> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return null;
+    return new Container();
   }
 }
