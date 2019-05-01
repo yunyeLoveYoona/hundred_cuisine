@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:hundred_cuisine/home/table_button.dart';
-import 'package:hundred_cuisine/home/table_button_model.dart';
+import 'package:hundred_cuisine/home/model/table_button_model.dart';
 
 class ButtonTableBar extends StatefulWidget {
   final List<TableButtonModel> _tableButtonModels;

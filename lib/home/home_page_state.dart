@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hundred_cuisine/home/cooling/home_cooling.dart';
+import 'package:hundred_cuisine/home/favorite/favorite_cooling.dart';
 import 'package:hundred_cuisine/home/home_page.dart';
 import 'package:hundred_cuisine/home/table_bar.dart';
 import 'package:hundred_cuisine/home/table_button.dart';
-import 'package:hundred_cuisine/home/table_button_model.dart';
+import 'package:hundred_cuisine/home/model/table_button_model.dart';
+import 'package:hundred_cuisine/home/type/cooling_type.dart';
 
 ///主页state
 class HomePageState extends State<HomePage>
@@ -56,7 +58,11 @@ class HomePageState extends State<HomePage>
                 onPageChanged: (pagePosition) {
                   _tableBar.changePage(pagePosition);
                 },
-                children: <Widget>[HomeCooling(), HomeCooling(), HomeCooling()],
+                children: <Widget>[
+                  HomeCooling(),
+                  CoolingType(),
+                  FavoriteCooling()
+                ],
               ),
             ),
             _tableBar
