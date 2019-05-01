@@ -5,6 +5,7 @@ import 'package:hundred_cuisine/home/table_button_model.dart';
 class ButtonTableBar extends StatefulWidget {
   final List<TableButtonModel> _tableButtonModels;
   final ValueChanged<int> _pageChange;
+  ValueChanged<int> changePage;
   ButtonTableBar(this._tableButtonModels,this._pageChange);
 
   @override
@@ -31,6 +32,7 @@ class TableBarState extends State<ButtonTableBar> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    widget.changePage = _onItemClick;
     return new Container(
       alignment: Alignment.bottomCenter,
       child: new Row(
