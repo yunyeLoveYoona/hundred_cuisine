@@ -5,9 +5,12 @@ import 'package:hundred_cuisine/home/resource/local_color.dart';
 class CoolingItemBuilder {
   static Widget build(CoolingModel model) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Image.network(model.imgUrl),
+        Image.network(
+          model.imgUrl,
+          fit: BoxFit.fitHeight,
+        ),
         Text(
           model.name,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),

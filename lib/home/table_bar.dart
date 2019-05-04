@@ -6,7 +6,7 @@ class ButtonTableBar extends StatefulWidget {
   final List<TableButtonModel> _tableButtonModels;
   final ValueChanged<int> _pageChange;
   ValueChanged<int> changePage;
-  int _selectPosition = 1 ;
+  int _selectPosition = 0 ;
   ButtonTableBar(this._tableButtonModels,this._pageChange);
 
   @override

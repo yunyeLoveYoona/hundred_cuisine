@@ -22,7 +22,7 @@ class HomePageState extends State<HomePage>
   void initState() {
     // TODO: implement initState
     super.initState();
-    _pageController = new PageController(initialPage: 3);
+    _pageController = new PageController(initialPage: 0);
     _tableButtonModels.add(
         TableButtonModel("家常", Icons.home, Colors.black45, Colors.redAccent));
     _tableButtonModels.add(
